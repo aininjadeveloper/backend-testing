@@ -29,7 +29,7 @@ const QuoteForm = () => {
     console.log("Sending data: ", datasend);
 
     try {
-      const response = await axios.post("https://115.99.110.243/32/NewQuote", datasend);
+      const response = await axios.post("http://localhost:3001/NewQuote", datasend);
       if(response.status === 200) {
         console.log("Basic information send successfully", response.data); 
       }
