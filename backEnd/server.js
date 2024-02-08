@@ -128,6 +128,18 @@ app.post('/NewQuote', async (req, res) => {
    })
 });
 
+//fetching the quote from the quote collection using the get method
+app.get('/quotes', async (req, res) => {
+  try {
+    const quote = await Quote.find();
+    res.json(quote);
+    console.log("Quotes data have been fetched in array successfully")
+  } catch (error) {
+    console.error('Error fetching items:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 // fetching data from the database
 // app.get('NewQuote', async (req,res)=>{
 //   try{
